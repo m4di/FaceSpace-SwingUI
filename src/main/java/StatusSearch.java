@@ -16,6 +16,8 @@ public class StatusSearch extends JPanel implements Callback{
     // Subcomponents
     private SearchBox searchBox;
     private StatusFeed statusFeed;
+    private AccountCreation accountCreation;
+
 
     // Data
     private String searchName;
@@ -28,7 +30,7 @@ public class StatusSearch extends JPanel implements Callback{
         // positions and sizes within the JPanel
         this.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.VERTICAL;
 
         // Add a label for plain text
         this.add(new JLabel("Enter a FaceSpace user's name here:"));
@@ -43,6 +45,13 @@ public class StatusSearch extends JPanel implements Callback{
         this.statusFeed = new StatusFeed(root);
         c.gridy = 2;
         this.add(this.statusFeed, c);
+
+
+        this.accountCreation = new AccountCreation(this, root);
+        c.gridy = 3;
+        this.add(this.accountCreation, c);
+
+
     }
 
     // The update method that will be called when the button is pressed
